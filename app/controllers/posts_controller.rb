@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find_by(params[:id])
+    @post = set_post
     respond_to do |format|
       format.html { render :show }
       format.json { render json: @post}
